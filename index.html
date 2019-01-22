@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,6 +13,23 @@
 <body>
 
     <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoi4xhoQv3i_97lQ6jUHHXDtwphrOU7tg&callback&libraries=places&callback=initMap" async defer></script>
+
+    <script>
+            const payload = {"street": "jaime balmes", "streetNumber": "12", "city": "mexico", "country": "mexico"}
+            fetch('https://routing-dot-cargamos-215500.appspot.com/geocoder/asdf1234', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:JSON.stringify( payload )
+            }).then((res) => res.json())
+                .then((data) =>  console.log(data))
+                .catch((err)=>console.log(err))
+
+
+    </script>
+
+
     <input id="origin-input" class="controls" type="text"
            placeholder="Enter an origin location">
 
@@ -30,7 +48,6 @@
     </div>
 
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=<Api-key>&callback&libraries=places&callback=initMap"
-            async defer></script>
+
 </body>
 </html>
